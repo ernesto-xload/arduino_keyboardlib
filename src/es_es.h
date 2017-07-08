@@ -100,7 +100,7 @@ const uint8_t _asciimap[256] =
   0x1c|SHIFT,      // Y
   0x1d|SHIFT,      // Z
   0x2f|ALTGR,      // [
-  0x35,          // bslash
+  0x35|ALTGR,      // bslash
   0x30|ALTGR,      // ]
   0x2f|SHIFT,    // ^
   0x38|SHIFT,    // _
