@@ -58,6 +58,7 @@ Version History
 ===============
 ```
 (Date format: DD/MM/YYYY)
+* 8/7/2017  Fix backslash problem in es_es.h
 * 14/6/2017 First commit
 
 ```
