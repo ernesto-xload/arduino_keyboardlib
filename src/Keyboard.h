@@ -22,6 +22,28 @@
 #ifndef KEYBOARD_h
 #define KEYBOARD_h
 
+/*
+Keyboard layout configuration
+
+You can use:
+- kbd_be_be
+- kbd_cz_cz
+- kbd_da_dk
+- kbd_de_de
+- kbd_en_us
+- kbd_es_es
+- kbd_fi_fi
+- kbd_fr_fr
+- kbd_it_it
+- kbd_pt_pt
+- kbd_tr_tr
+
+Only es_es and en_us are full-tested.
+
+ */
+
+#define kbd_es_es
+
 #include "HID.h"
 
 #if !defined(_USING_HID)

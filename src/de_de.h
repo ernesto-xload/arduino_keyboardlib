@@ -1,3 +1,4 @@
+#ifndef _kbd_lang
 #define _kbd_lang
 
 extern
@@ -136,4 +137,4 @@ const uint8_t _asciimap[128] =
   0x30,    // ~
   0        // DEL                   127
 };
-
+#endif
