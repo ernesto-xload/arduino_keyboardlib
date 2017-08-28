@@ -31,12 +31,11 @@ Download and installation
 
 Use
 ===
-To configure the keyboard layout it just add #define kbd_lang after #include <Keyboard.h>
+To configure the keyboard layout you must edit Keyboard.h and modify #define kbd_lang line
 
 Example:
 ```
 #define kbd_es_es
-#include <Keyboard.h>
 ```
 
 You can use:
@@ -58,6 +57,7 @@ Version History
 ===============
 ```
 (Date format: DD/MM/YYYY)
+* 28/8/2017 Correct how to configure at Readme.md
 * 8/7/2017  Fix backslash problem in es_es.h
 * 14/6/2017 First commit
 
