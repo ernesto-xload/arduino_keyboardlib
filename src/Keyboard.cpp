@@ -420,7 +420,13 @@ size_t Keyboard_::press(uint8_t k)
 	uint8_t i;
 
 	if(k>=0xB0 && k<=0xDA){			//it's a non-printing key
-		k = k - 136;
+		if(k>=0xB5 && k<=0xBE){		//0xB5-0xBE reserved for special non printing keys asigned manually
+			if(k==0xB5) k=0x65;	//0xB5 ==> 0x76 (MENU key)
+			if(k==0xB6) k=0x46;	//0xB6 ==> 0x46 (PRINT Screen key)
+		}
+		else{
+			k = k - 136;
+		}
 	}
 	else {
 	if(k>=0x80 && k<=0x87){			//it's a modifier
@@ -474,7 +480,13 @@ size_t Keyboard_::release(uint8_t k)
 	uint8_t i;
 
 	if(k>=0xB0 && k<=0xDA){			//it's a non-printing key
-		k = k - 136;
+		if(k>=0xB5 && k<=0xBE){		//0xB5-0xBE reserved for special non printing keys asigned manually
+			if(k==0xB5) k=0x65;	//0xB5 ==> 0x76 (MENU key)
+			if(k==0xB6) k=0x46;	//0xB6 ==> 0x46 (PRINT Scr key)
+		}
+		else{
+			k = k - 136;
+		}
 	}
 	else {
 	if(k>=0x80 && k<=0x87){			//it's a modifier

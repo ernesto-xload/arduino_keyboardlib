@@ -93,6 +93,10 @@ Only es_es and en_us are full-tested.
 #define KEY_F11       0xCC
 #define KEY_F12       0xCD
 
+//0xB5-0xBE reserved for special non printing keys
+#define KEY_MENU 0xB5
+#define KEY_PRINTSCREEN 0xB6
+
 //  Low level key report: up to 6 keys and shift, ctrl etc at once
 typedef struct
 {
