@@ -5,7 +5,7 @@ Based on Arduino Keyboard library 1.0.1
 
 This library allows an Arduino board with USB capabilites to act as a Keyboard.
 
-For more information about this library please visit http://www.arduino.cc/en/Reference/Keyboard
+For more information about this library please visit https://www.arduino.cc/reference/en/language/functions/usb/keyboard/
 
 Modified by Ernesto Sanchez to support multiple keyboard layout 
 
