@@ -75,32 +75,32 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     0xa1, 0x01,                    // COLLECTION (Application)
     0x85, 0x02,                    //   REPORT_ID (2)
     0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
-   
+
   0x19, 0xe0,                    //   USAGE_MINIMUM (Keyboard LeftControl)
     0x29, 0xe7,                    //   USAGE_MAXIMUM (Keyboard Right GUI)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
     0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
     0x75, 0x01,                    //   REPORT_SIZE (1)
-    
+
   0x95, 0x08,                    //   REPORT_COUNT (8)
     0x81, 0x02,                    //   INPUT (Data,Var,Abs)
     0x95, 0x01,                    //   REPORT_COUNT (1)
     0x75, 0x08,                    //   REPORT_SIZE (8)
     0x81, 0x03,                    //   INPUT (Cnst,Var,Abs)
-    
+
   0x95, 0x06,                    //   REPORT_COUNT (6)
     0x75, 0x08,                    //   REPORT_SIZE (8)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
     0x25, 0x65,                    //   LOGICAL_MAXIMUM (101)
     0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
-    
+
   0x19, 0x00,                    //   USAGE_MINIMUM (Reserved (no event indicated))
     0x29, 0x65,                    //   USAGE_MAXIMUM (Keyboard Application)
     0x81, 0x00,                    //   INPUT (Data,Ary,Abs)
     0xc0,                          // END_COLLECTION
 };
 
-Keyboard_::Keyboard_(void) 
+Keyboard_::Keyboard_(void)
 {
 	static HIDSubDescriptor node(_hidReportDescriptor, sizeof(_hidReportDescriptor));
 	HID().AppendDescriptor(&node);
@@ -388,7 +388,7 @@ const uint8_t _asciimap[256] =
 */
 
 /*
-// Init var         
+// Init var
 bool _altGrMap[128];
 bool _altFine = false;
 
@@ -412,10 +412,10 @@ void initAltGr() {
 uint8_t USBPutChar(uint8_t c);
 
 // press() adds the specified key (printing, non-printing, or modifier)
-// to the persistent key report and sends the report.  Because of the way 
-// USB HID works, the host acts like the key remains pressed until we 
+// to the persistent key report and sends the report.  Because of the way
+// USB HID works, the host acts like the key remains pressed until we
 // call release(), releaseAll(), or otherwise clear the report and resend.
-size_t Keyboard_::press(uint8_t k) 
+size_t Keyboard_::press(uint8_t k)
 {
 	uint8_t i;
 
@@ -456,7 +456,7 @@ size_t Keyboard_::press(uint8_t k)
 	if (_keyReport.keys[0] != k && _keyReport.keys[1] != k &&
 		_keyReport.keys[2] != k && _keyReport.keys[3] != k &&
 		_keyReport.keys[4] != k && _keyReport.keys[5] != k) {
-		
+
 		for (i=0; i<6; i++) {
 			if (_keyReport.keys[i] == 0x00) {
 				_keyReport.keys[i] = k;
@@ -466,7 +466,7 @@ size_t Keyboard_::press(uint8_t k)
 		if (i == 6) {
 			setWriteError();
 			return 0;
-		}	
+		}
 	}
 	sendReport(&_keyReport);
 	return 1;
@@ -530,17 +530,17 @@ size_t Keyboard_::release(uint8_t k)
 void Keyboard_::releaseAll(void)
 {
 	_keyReport.keys[0] = 0;
-	_keyReport.keys[1] = 0;	
+	_keyReport.keys[1] = 0;
 	_keyReport.keys[2] = 0;
-	_keyReport.keys[3] = 0;	
+	_keyReport.keys[3] = 0;
 	_keyReport.keys[4] = 0;
-	_keyReport.keys[5] = 0;	
+	_keyReport.keys[5] = 0;
 	_keyReport.modifiers = 0;
 	sendReport(&_keyReport);
 }
 
 size_t Keyboard_::write(uint8_t c)
-{	
+{
 	uint8_t p = press(c);  // Keydown
 	release(c);            // Keyup
 	return p;              // just return the result of press() since release() almost always returns 1
