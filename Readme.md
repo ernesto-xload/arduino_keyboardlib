@@ -1,13 +1,13 @@
 Arduino Keyboard library with multiple layout support
 =====================================================
- 
+
 Based on Arduino Keyboard library 1.0.1
 
 This library allows an Arduino board with USB capabilites to act as a Keyboard.
 
 For more information about this library please visit http://www.arduino.cc/en/Reference/Keyboard
 
-Modified by Ernesto Sanchez to support multiple keyboard layout 
+Modified by Ernesto Sanchez to support multiple keyboard layout
 
 Supported layouts:
 * be_be
@@ -22,7 +22,7 @@ Supported layouts:
 * pt_pt
 * tr_tr
 
-__NOTE:__ Only en_us and es_es are tested at june 2017. 
+__NOTE:__ Only en_us and es_es are tested at june 2017.
 
 Download and installation
 =========================
