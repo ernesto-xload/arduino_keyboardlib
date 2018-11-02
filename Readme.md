@@ -31,7 +31,7 @@ Download and installation
 
 Use
 ===
-To configure the keyboard layout you must edit Keyboard.h and modify #define kbd_lang line
+To configure the keyboard layout you must edit ArduinoKeyboardLib.h and modify #define kbd_lang line
 
 Example:
 ```

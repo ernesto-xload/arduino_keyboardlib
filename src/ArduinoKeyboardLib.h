@@ -1,5 +1,5 @@
 /*
-  Keyboard.h
+  ArduinoKeyboardLib.h
 
   Copyright (c) 2015, Arduino LLC
   Original code (pre-library): Copyright (c) 2011, Peter Barrett
@@ -19,8 +19,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef KEYBOARD_h
-#define KEYBOARD_h
+#ifndef ARDUINOKEYBOARDLIB_h
+#define ARDUINOKEYBOARDLIB_h
 
 /*
 Keyboard layout configuration
